@@ -1,0 +1,22 @@
+:root{
+    --Colors:red;
+}
+
+// 盒子
+@mixin box($w,$h:none,$bg:var(--Colors)){
+    width: $w;
+    height: $h;
+    background-image: $bg;
+}
+
+// 弹性盒
+@mixin flexBox($ju:center,$al:center,$direc:row){
+    display: flex;
+    flex-direction: $direc;
+    justify-items: $ju;
+    align-items: $al
+}
+
+
+
+
