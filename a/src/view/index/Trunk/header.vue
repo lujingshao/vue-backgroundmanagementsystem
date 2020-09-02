@@ -19,6 +19,7 @@ export default {
         width: 340px;
         height: auto;
         display: block;
+        color:red;
     }
     >.el-col-14{
         text-align: right;

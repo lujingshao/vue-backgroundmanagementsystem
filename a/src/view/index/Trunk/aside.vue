@@ -13,9 +13,9 @@
             <i class="el-icon-location"></i>
             <span>基本功能</span>
           </template>
-          <el-menu-item index="1-1">表格</el-menu-item>
-          <el-menu-item index="1-2">地图</el-menu-item>
-          <el-menu-item index="1-3">图表</el-menu-item>
+          <el-menu-item index="1-1" @click="myRouter('/home/tables')">表格</el-menu-item>
+          <el-menu-item index="1-2" @click="myRouter('/home/maps')">地图</el-menu-item>
+          <el-menu-item index="1-3" @click="myRouter('/home/echars')">图表</el-menu-item>
           <el-submenu index="1-4">
             <template slot="title">三级菜单</template>
             <el-menu-item index="1-4-1">1</el-menu-item>
@@ -23,10 +23,15 @@
             <el-menu-item index="1-4-3">3</el-menu-item>
           </el-submenu>
         </el-submenu>
-        <el-menu-item index="2">
-          <i class="el-icon-menu"></i>
-          <span slot="title">导航二</span>
-        </el-menu-item>
+        <el-submenu index="2">
+          <template slot="title">
+            <i class="el-icon-location"></i>
+            <span>小游戏</span>
+          </template>
+          <el-menu-item index="2-1" @click="myRouter('/home/greedySnake')">贪吃蛇</el-menu-item>
+          <el-menu-item index="2-2" @click="myRouter('/home/rversi')">黑白棋</el-menu-item>
+          <el-menu-item index="2-3" @click="myRouter('/home/gobang')">五子棋</el-menu-item>
+        </el-submenu>
         <el-menu-item index="4">
           <i class="el-icon-setting"></i>
           <span slot="title">导航四</span>
@@ -38,7 +43,11 @@
 <script>
 export default {
   name: "Aside",
-  methods: {},
+  methods: {
+    myRouter(url) {
+      this.$router.push(url);
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
